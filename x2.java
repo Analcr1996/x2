@@ -1,8 +1,9 @@
+
 //////// Exercise x2:  modularize exercise x1, and add dog to chase hero.
 //////// Whoever Whoever  (CST 112; today's date?)
 
 //////// Please change these to your name and today's date.
-String author=  "Whoever Whatever";
+String author=  "Ana Collantes 9/16/15";
 String title=  " ??? ";
 String help=  " Click to relocate hero \n 'q' to quit; 'r' to reset. ";
 
@@ -49,7 +50,16 @@ void hero() {
   /* INSERT YOUR CODE HERE! */
   /* REPLACE THIS STUB! */  text( "[[[[ Zoog. ]]]]", 200, 200 );
   rect( x,y, 50,80 );
+  //Move hero
+  x= x+dx;
+  if( x>width-20) {dx=-dx;} 
+if (x<20) {dx=-dx;}
+  y= y+dy;
+if (y<20 || y>height-20){
+    dy= - dy;
+   }
 }
+
 void dog() {
   dogX=  dogX - (dogX-x)/30;
   dogY=  dogY - (dogY-y)/40;
@@ -81,6 +91,5 @@ void keyPressed() {
   }
   /* INSERT YOUR CODE HERE! */
 }
-   
    
 
